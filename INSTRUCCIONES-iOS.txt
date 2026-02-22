@@ -1,0 +1,76 @@
+GTD — Planea, organiza y ejecuta
+PWA para Safari iOS
+===================================
+
+ARCHIVOS INCLUIDOS
+------------------
+  index.html     → Aplicación principal
+  manifest.json  → Configuración PWA
+  sw.js          → Service Worker (caché offline)
+  icon-152.png   → Ícono iPad (non-Retina)
+  icon-167.png   → Ícono iPad Pro (Retina)
+  icon-180.png   → Ícono iPhone (Retina)
+
+INSTALAR EN iPhone / iPad
+--------------------------
+Safari iOS no puede abrir archivos locales con Service Worker,
+por lo que necesitas servir los archivos desde un servidor HTTP.
+El método más sencillo es usar tu propia computadora:
+
+PASO 1 — Servir desde tu PC (Mac, Windows o Linux)
+----------------------------------------------------
+Abre una terminal en la carpeta de este proyecto y ejecuta
+UNO de estos comandos según lo que tengas instalado:
+
+  Python (viene en Mac/Linux, instalar en Windows):
+    python3 -m http.server 8080 --bind 0.0.0.0
+
+  Node.js:
+    npx http-server . -p 8080 --cors
+
+  PHP:
+    php -S 0.0.0.0:8080
+
+PASO 2 — Encuentra tu IP local
+-------------------------------
+  Mac/Linux:  ipconfig getifaddr en0   (o: hostname -I)
+  Windows:    ipconfig → busca "Dirección IPv4"
+
+  Ejemplo: 192.168.1.105
+
+PASO 3 — Abre en Safari de tu iPhone/iPad
+------------------------------------------
+  1. Conecta el iPhone al mismo WiFi que tu PC
+  2. Abre Safari (no Chrome, no Firefox — debe ser Safari)
+  3. Escribe en la barra de dirección:
+       http://192.168.1.XXX:8080
+  4. Espera a que cargue completamente
+
+PASO 4 — Instalar en la pantalla de inicio
+-------------------------------------------
+  1. Toca el botón compartir  (el cuadrado con flecha ↑)
+  2. Desplázate y toca "Añadir a pantalla de inicio"
+  3. Confirma el nombre "GTD" y toca "Añadir"
+  4. El ícono aparece en tu pantalla de inicio
+
+PASO 5 — Usar offline
+----------------------
+  1. Abre la app desde el ícono de la pantalla de inicio
+     (NO desde Safari — debe abrirse como app independiente)
+  2. Ahora puedes apagar el servidor de tu PC
+  3. La app funciona sin internet desde este momento
+
+NOTAS IMPORTANTES
+-----------------
+- Los datos se guardan en el iPhone (localStorage de Safari)
+- Funcionan aunque no haya WiFi, datos móviles ni servidor
+- Para actualizar la app: repite el proceso con la nueva versión
+- iOS Safari limita el caché a ~50MB (más que suficiente)
+- Probado en iOS 14+ con Safari
+
+SOLUCIÓN DE PROBLEMAS
+---------------------
+"No se puede abrir" → Verifica que iPhone y PC estén en el mismo WiFi
+"No aparece el botón Añadir" → Espera a que la página cargue por completo
+"Sin datos después de instalar" → Los datos son independientes por origen;
+  después de instalar, vuelve a introducir tus datos o usa Exportar/Importar

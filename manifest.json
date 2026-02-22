@@ -1,0 +1,17 @@
+{
+  "name": "GTD — Planea, organiza y ejecuta",
+  "short_name": "GTD",
+  "description": "Organizador GTD personal offline",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "lang": "es",
+  "icons": [
+    { "src": "icon-152.png", "sizes": "152x152", "type": "image/png" },
+    { "src": "icon-167.png", "sizes": "167x167", "type": "image/png" },
+    { "src": "icon-180.png", "sizes": "180x180", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
