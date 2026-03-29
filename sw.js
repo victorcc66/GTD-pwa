@@ -1,12 +1,11 @@
 // =====================================================
-// GTD — Service Worker
+// Plan de Acción — Service Worker
 // Compatible con Safari iOS 11.3+
 // Estrategia: Cache-First para funcionar 100% offline
 // =====================================================
 
-const CACHE_NAME = 'gtd-ios-v1';
+const CACHE_NAME = 'plan-accion-v1';
 
-// Archivos esenciales que se cachean en la instalación
 const ASSETS = [
   './index.html',
   './manifest.json',
@@ -15,12 +14,10 @@ const ASSETS = [
   './icon-180.png'
 ];
 
-// ===== INSTALL: precachear todos los assets =====
+// ── INSTALL: precachear assets esenciales ──
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
-      // Cachear cada archivo individualmente para que un fallo
-      // no rompa toda la instalación
       return Promise.all(
         ASSETS.map(function(url) {
           return cache.add(url).catch(function(err) {
@@ -29,66 +26,50 @@ self.addEventListener('install', function(event) {
         })
       );
     }).then(function() {
-      // Activar inmediatamente sin esperar a que se cierren tabs
       return self.skipWaiting();
     })
   );
 });
 
-// ===== ACTIVATE: limpiar versiones antiguas del caché =====
+// ── ACTIVATE: limpiar caches viejos ──
 self.addEventListener('activate', function(event) {
   event.waitUntil(
-    caches.keys().then(function(cacheNames) {
+    caches.keys().then(function(keys) {
       return Promise.all(
-        cacheNames
-          .filter(function(name) { return name !== CACHE_NAME; })
-          .map(function(name) { return caches.delete(name); })
+        keys.filter(function(k) { return k !== CACHE_NAME; })
+            .map(function(k) { return caches.delete(k); })
       );
     }).then(function() {
-      // Tomar control de todos los clientes abiertos inmediatamente
       return self.clients.claim();
     })
   );
 });
 
-// ===== FETCH: Cache-First =====
-// 1. Buscar en caché
-// 2. Si no está en caché, ir a la red y guardar la respuesta
-// 3. Si no hay red, devolver el index.html cacheado como fallback
+// ── FETCH: Cache-First ──
 self.addEventListener('fetch', function(event) {
-  // Solo manejar peticiones GET
   if (event.request.method !== 'GET') return;
-
-  // Solo manejar peticiones del mismo origen (no CDNs externos)
   var url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
 
   event.respondWith(
-    caches.match(event.request).then(function(cachedResponse) {
-      // Si está en caché, devolverlo inmediatamente
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-
-      // No está en caché: ir a la red
-      return fetch(event.request).then(function(networkResponse) {
-        // Guardar en caché si la respuesta es válida
-        if (networkResponse && networkResponse.status === 200) {
-          var responseToCache = networkResponse.clone();
+    caches.match(event.request).then(function(cached) {
+      if (cached) return cached;
+      return fetch(event.request).then(function(response) {
+        if (response && response.status === 200) {
+          var clone = response.clone();
           caches.open(CACHE_NAME).then(function(cache) {
-            cache.put(event.request, responseToCache);
+            cache.put(event.request, clone);
           });
         }
-        return networkResponse;
+        return response;
       }).catch(function() {
-        // Sin red y sin caché específico: devolver index.html
         return caches.match('./index.html');
       });
     })
   );
 });
 
-// ===== MENSAJE: permitir forzar actualización desde la app =====
+// ── MESSAGE: forzar actualización ──
 self.addEventListener('message', function(event) {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();

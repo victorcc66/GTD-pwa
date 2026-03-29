@@ -3,19 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>GTD — Planea, organiza y ejecuta</title>
+<title>Plan de Acción</title>
 
-<!-- ===== PWA: Web App Manifest ===== -->
+<!-- ===== PWA ===== -->
 <link rel="manifest" href="manifest.json">
-
-<!-- ===== iOS Safari PWA meta tags ===== -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="GTD">
+<meta name="apple-mobile-web-app-title" content="Plan de Acción">
 <meta name="theme-color" content="#0a0a0a">
-<meta name="description" content="Organizador GTD — Planea, organiza y ejecuta">
-
-<!-- Íconos Apple Touch (requeridos por iOS) -->
 <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
 <link rel="apple-touch-icon" sizes="167x167" href="icon-167.png">
 <link rel="apple-touch-icon" sizes="152x152" href="icon-152.png">
@@ -66,7 +61,7 @@ body {
   font-family: var(--font-main);
   background: var(--bg);
   color: var(--text);
-  font-size: 14px;
+  font-size: 15.4px;
   line-height: 1.5;
   min-height: 100vh;
   transition: background 0.3s, color 0.3s;
@@ -89,7 +84,7 @@ body {
   background: none;
   border: 1px solid var(--green);
   color: var(--accent);
-  font-size: 18px;
+  font-size: 19.8px;
   cursor: pointer;
   padding: 4px 8px;
   border-radius: var(--radius);
@@ -97,16 +92,17 @@ body {
 }
 
 #header h1 {
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: bold;
   color: var(--accent);
   letter-spacing: 1px;
   text-transform: uppercase;
   flex: 1;
+  text-align: center;
 }
 
 #current-page-label {
-  font-size: 11px;
+  font-size: 12.1px;
   color: var(--text-muted);
   text-align: right;
   text-transform: uppercase;
@@ -141,7 +137,7 @@ body {
 
 #menu-header strong {
   color: var(--accent);
-  font-size: 12px;
+  font-size: 13.2px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -150,13 +146,13 @@ body {
   background: none;
   border: none;
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: 19.8px;
   cursor: pointer;
 }
 
 /* Nav pages */
 .menu-section-label {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--text-dim);
   padding: 10px 14px 4px;
   text-transform: uppercase;
@@ -173,7 +169,7 @@ body {
   border: none;
   color: var(--text-muted);
   font-family: var(--font-main);
-  font-size: 13px;
+  font-size: 14.3px;
   padding: 10px 14px;
   cursor: pointer;
   text-align: left;
@@ -191,7 +187,7 @@ body {
   margin-left: auto;
   background: var(--green-dim);
   color: var(--accent);
-  font-size: 10px;
+  font-size: 11px;
   padding: 1px 5px;
   border-radius: 10px;
 }
@@ -211,7 +207,7 @@ body {
   border: 1px solid var(--border);
   color: var(--text-muted);
   font-family: var(--font-main);
-  font-size: 12px;
+  font-size: 13.2px;
   padding: 8px 12px;
   cursor: pointer;
   border-radius: var(--radius);
@@ -227,7 +223,7 @@ body {
   border: 1px solid var(--green);
   color: var(--accent);
   font-family: var(--font-main);
-  font-size: 12px;
+  font-size: 13.2px;
   padding: 8px 12px;
   cursor: pointer;
   border-radius: var(--radius);
@@ -255,7 +251,7 @@ body {
 .page.active { display: block; }
 
 .page-title {
-  font-size: 16px;
+  font-size: 17.6px;
   font-weight: bold;
   color: var(--accent);
   text-transform: uppercase;
@@ -284,7 +280,7 @@ body {
 
 .card-title {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15.4px;
   flex: 1;
   color: var(--text);
 }
@@ -297,7 +293,7 @@ textarea, select {
   border: 1px solid var(--border);
   color: var(--text);
   font-family: var(--font-main);
-  font-size: 13px;
+  font-size: 14.3px;
   padding: 7px 10px;
   border-radius: var(--radius);
   outline: none;
@@ -316,7 +312,7 @@ textarea {
 select option { background: var(--bg3); }
 
 label {
-  font-size: 11px;
+  font-size: 12.1px;
   color: var(--text-muted);
   display: block;
   margin-bottom: 3px;
@@ -337,7 +333,7 @@ label {
 /* ===== BUTTONS ===== */
 .btn {
   font-family: var(--font-main);
-  font-size: 12px;
+  font-size: 13.2px;
   padding: 7px 12px;
   border-radius: var(--radius);
   cursor: pointer;
@@ -370,7 +366,7 @@ label {
 .btn-danger:hover { background: var(--danger); color: var(--text); }
 
 .btn-sm {
-  font-size: 11px;
+  font-size: 12.1px;
   padding: 4px 8px;
 }
 
@@ -383,7 +379,7 @@ label {
 
 /* ===== IMPORTANCE BADGE ===== */
 .imp-badge {
-  font-size: 11px;
+  font-size: 12.1px;
   font-weight: bold;
   padding: 2px 6px;
   border-radius: 3px;
@@ -417,7 +413,7 @@ input[type="checkbox"] {
 
 .task-summary .task-name {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15.4px;
   flex: 1;
 }
 
@@ -434,19 +430,71 @@ input[type="checkbox"] {
   border: none;
   color: var(--text-dim);
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15.4px;
   padding: 2px;
   line-height: 1;
 }
 
 /* ===== METAS PAGE ===== */
+
+/* Bloque de avance global — foco principal de la página */
+.meta-avance-global {
+  background: var(--green-dim);
+  border: 2px solid var(--green-bright);
+  border-radius: 8px;
+  padding: 20px 16px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.meta-avance-label {
+  font-size: 14.3px;
+  font-weight: bold;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.meta-avance-numero {
+  font-size: 79.2px;
+  font-weight: bold;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.meta-avance-formula {
+  font-size: 12.1px;
+  color: var(--text-dim);
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Barra de progreso global */
+.meta-avance-bar-wrap {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.meta-avance-bar-fill {
+  height: 100%;
+  background: var(--green-bright);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
 .meta-section {
   margin-bottom: 20px;
 }
 
 .meta-section-title {
   font-weight: bold;
-  font-size: 13px;
+  font-size: 14.3px;
   color: var(--green-bright);
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -471,7 +519,7 @@ input[type="checkbox"] {
 }
 
 .meta-box label {
-  font-size: 11px;
+  font-size: 12.1px;
   color: var(--text-muted);
   margin-bottom: 4px;
 }
@@ -492,7 +540,7 @@ input[type="checkbox"] {
 }
 
 .meta-percent {
-  font-size: 11px;
+  font-size: 12.1px;
   color: var(--text-muted);
   margin-top: 4px;
 }
@@ -518,7 +566,7 @@ input[type="checkbox"] {
 
 .inbox-item span {
   flex: 1;
-  font-size: 13px;
+  font-size: 14.3px;
 }
 
 .inbox-send-row {
@@ -568,7 +616,7 @@ input[type="checkbox"] {
   background: var(--bg3);
   border-radius: var(--radius);
   margin-bottom: 5px;
-  font-size: 13px;
+  font-size: 14.3px;
 }
 
 .activity-item span { flex: 1; }
@@ -580,7 +628,7 @@ input[type="checkbox"] {
 
 /* ===== DONE PAGE ===== */
 .done-group-title {
-  font-size: 12px;
+  font-size: 13.2px;
   color: var(--green-bright);
   font-weight: bold;
   text-transform: uppercase;
@@ -606,14 +654,14 @@ input[type="checkbox"] {
   padding: 8px 10px;
   margin-bottom: 6px;
 }
-.future-item span { flex: 1; font-size: 13px; }
+.future-item span { flex: 1; font-size: 14.3px; }
 
 /* ===== EMPTY STATE ===== */
 .empty-state {
   text-align: center;
   color: var(--text-dim);
   padding: 30px;
-  font-size: 12px;
+  font-size: 13.2px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -635,7 +683,7 @@ hr {
 }
 
 .add-form-title {
-  font-size: 11px;
+  font-size: 12.1px;
   font-weight: bold;
   color: var(--green-bright);
   text-transform: uppercase;
@@ -645,7 +693,7 @@ hr {
 
 /* ===== INBOX HINT ===== */
 .inbox-hint {
-  font-size: 12px;
+  font-size: 13.2px;
   color: var(--text-dim);
   background: var(--bg2);
   border: 1px dashed var(--border);
@@ -663,7 +711,7 @@ hr {
   border: none;
   color: var(--accent);
   font-family: var(--font-main);
-  font-size: 12px;
+  font-size: 13.2px;
   cursor: pointer;
   text-decoration: underline;
   padding: 0;
@@ -677,7 +725,7 @@ hr {
 
 /* ===== UTILITY ===== */
 .mt8 { margin-top: 8px; }
-.text-muted { color: var(--text-muted); font-size: 12px; }
+.text-muted { color: var(--text-muted); font-size: 13.2px; }
 .hidden { display: none !important; }
 .flex-between { display: flex; justify-content: space-between; align-items: center; }
 
@@ -706,7 +754,7 @@ hr {
 
 .modal-title {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15.4px;
   color: var(--accent);
   margin-bottom: 14px;
 }
@@ -725,8 +773,16 @@ hr {
 }
 
 /* ===== iOS Safari PWA FIXES ===== */
-
-/* Safe area para notch y Dynamic Island del iPhone */
+html {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+}
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+}
 #header {
   padding-top: max(10px, env(safe-area-inset-top));
 }
@@ -737,27 +793,15 @@ hr {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-body {
-  padding-bottom: env(safe-area-inset-bottom);
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: none;
-}
-
-/* Eliminar delay de 300ms en iOS (touch-action: manipulation) */
 button, a, input, select, textarea,
 .menu-nav-btn, .task-summary, .project-header,
-.inbox-item, .future-item, .link-btn, .card,
-#overlay {
+.inbox-item, .future-item, .link-btn, .card, #overlay {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
-
-/* Área táctil mínima 44pt (Apple Human Interface Guidelines) */
 .menu-nav-btn { min-height: 44px; }
 #menu-toggle  { min-width: 44px; min-height: 44px; }
 #menu-close   { min-width: 44px; min-height: 44px; }
-
-/* iOS normaliza inputs con appearance propia — resetear */
 input[type="text"], input[type="date"], input[type="number"],
 textarea, select {
   -webkit-appearance: none;
@@ -774,7 +818,7 @@ textarea, select {
 <!-- ===== SIDE MENU ===== -->
 <nav id="side-menu">
   <div id="menu-header">
-    <strong>GTD</strong>
+    <strong>Plan de Acción</strong>
     <button id="menu-close" onclick="closeMenu()">✕</button>
   </div>
 
@@ -798,8 +842,7 @@ textarea, select {
 <!-- ===== HEADER ===== -->
 <header id="header">
   <button id="menu-toggle" onclick="openMenu()">☰</button>
-  <h1>Planea, organiza y ejecuta</h1>
-  <span id="current-page-label">Metas</span>
+  <h1>Plan de Acción</h1>
 </header>
 
 <!-- ===== MAIN ===== -->
@@ -810,6 +853,18 @@ textarea, select {
   ================================= -->
   <section class="page active" id="page-metas">
     <div class="page-title">Metas</div>
+
+    <!-- AVANCE GLOBAL PONDERADO -->
+    <div class="meta-avance-global">
+      <div class="meta-avance-label">Avance General</div>
+      <div class="meta-avance-numero" id="avance-global">0.0%</div>
+      <div class="meta-avance-bar-wrap">
+        <div class="meta-avance-bar-fill" id="avance-global-bar"></div>
+      </div>
+      <div class="meta-avance-formula">
+        Sell In ×45% &nbsp;+&nbsp; Sell Out ×30% &nbsp;+&nbsp; Endémico ×25%
+      </div>
+    </div>
 
     <!-- SELL OUT -->
     <div class="meta-section">
@@ -824,8 +879,8 @@ textarea, select {
           <input type="number" id="sellout-avance" placeholder="0.00" oninput="updateMetaProgress('sellout')">
         </div>
       </div>
-      <div class="meta-progress"><div class="meta-progress-bar" id="sellout-bar" style="width:0%"></div></div>
-      <div class="meta-percent" id="sellout-pct">0%</div>
+      <div style="display:none"><div id="sellout-bar"></div></div>
+      <span id="sellout-pct" style="display:none"></span>
     </div>
 
     <!-- SELL IN -->
@@ -841,8 +896,8 @@ textarea, select {
           <input type="number" id="sellin-avance" placeholder="0.00" oninput="updateMetaProgress('sellin')">
         </div>
       </div>
-      <div class="meta-progress"><div class="meta-progress-bar" id="sellin-bar" style="width:0%"></div></div>
-      <div class="meta-percent" id="sellin-pct">0%</div>
+      <div style="display:none"><div id="sellin-bar"></div></div>
+      <span id="sellin-pct" style="display:none"></span>
     </div>
 
     <!-- ENDEMICO -->
@@ -858,8 +913,8 @@ textarea, select {
           <input type="number" id="endemico-avance" placeholder="0.00" oninput="updateMetaProgress('endemico')">
         </div>
       </div>
-      <div class="meta-progress"><div class="meta-progress-bar" id="endemico-bar" style="width:0%"></div></div>
-      <div class="meta-percent" id="endemico-pct">0%</div>
+      <div style="display:none"><div id="endemico-bar"></div></div>
+      <span id="endemico-pct" style="display:none"></span>
     </div>
 
     <div class="btn-row">
@@ -1260,7 +1315,6 @@ function goTo(page) {
     metas:'Metas', inbox:'Bandeja de Entrada', active:'Tareas Activas',
     projects:'Proyectos', seguimiento:'Seguimiento', future:'Tareas Futuras', done:'Terminado'
   };
-  document.getElementById('current-page-label').textContent = labels[page] || '';
   closeMenu();
   renderPage(page);
 }
@@ -1308,14 +1362,38 @@ function loadMetasUI() {
     document.getElementById(k+'-avance').value = m[k].avance || '';
     updateMetaProgress(k);
   });
+  updateAvanceGlobal();
 }
 
 function updateMetaProgress(k) {
-  const obj = parseFloat(document.getElementById(k+'-objetivo').value) || 0;
+  const obj    = parseFloat(document.getElementById(k+'-objetivo').value) || 0;
   const avance = parseFloat(document.getElementById(k+'-avance').value) || 0;
-  const pct = obj > 0 ? Math.min(100, Math.round(avance/obj*100)) : 0;
+  const pct    = obj > 0 ? Math.min(100, Math.round(avance/obj*100)) : 0;
   document.getElementById(k+'-bar').style.width = pct + '%';
-  document.getElementById(k+'-pct').textContent = pct + '%' + (obj > 0 ? ' · ' + fmt$(avance) + ' / ' + fmt$(obj) : '');
+  document.getElementById(k+'-pct').textContent =
+    pct + '%' + (obj > 0 ? ' · ' + fmt$(avance) + ' / ' + fmt$(obj) : '');
+  // Recalcular avance global cada vez que cambia cualquier meta
+  updateAvanceGlobal();
+}
+
+// Calcula el avance ponderado:
+// AVANCE = (SELL IN × 0.45) + (SELL OUT × 0.30) + (ENDÉMICO × 0.25)
+// Cada término es el % de avance individual (avance/objetivo × 100)
+function updateAvanceGlobal() {
+  const getPct = (k) => {
+    const obj    = parseFloat(document.getElementById(k+'-objetivo').value) || 0;
+    const avance = parseFloat(document.getElementById(k+'-avance').value) || 0;
+    return obj > 0 ? Math.min(100, (avance / obj) * 100) : 0;
+  };
+
+  const pctSellin   = getPct('sellin');
+  const pctSellout  = getPct('sellout');
+  const pctEndemico = getPct('endemico');
+
+  const global = (pctSellin * 0.45) + (pctSellout * 0.30) + (pctEndemico * 0.25);
+
+  document.getElementById('avance-global').textContent     = global.toFixed(1) + '%';
+  document.getElementById('avance-global-bar').style.width = Math.min(100, global).toFixed(1) + '%';
 }
 
 function saveMetas() {
@@ -2001,25 +2079,23 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<!-- ===== Service Worker Registration (Safari iOS requiere archivo externo) ===== -->
+<!-- ===== Service Worker (archivo externo requerido por Safari iOS) ===== -->
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('./sw.js', { scope: './' })
       .then(function(reg) {
-        console.log('GTD SW registrado:', reg.scope);
-        // Activar inmediatamente si hay nueva versión esperando
+        console.log('SW registrado:', reg.scope);
         if (reg.waiting) reg.waiting.postMessage({ type: 'SKIP_WAITING' });
         reg.addEventListener('updatefound', function() {
           var sw = reg.installing;
           sw.addEventListener('statechange', function() {
-            if (sw.state === 'installed' && navigator.serviceWorker.controller) {
+            if (sw.state === 'installed' && navigator.serviceWorker.controller)
               sw.postMessage({ type: 'SKIP_WAITING' });
-            }
           });
         });
       })
-      .catch(function(err) { console.warn('SW error:', err); });
+      .catch(function(e) { console.warn('SW error:', e); });
   });
 }
 </script>

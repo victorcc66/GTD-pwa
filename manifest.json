@@ -1,6 +1,6 @@
 {
-  "name": "GTD — Planea, organiza y ejecuta",
-  "short_name": "GTD",
+  "name": "Plan de Acción",
+  "short_name": "Plan de Acción",
   "description": "Organizador GTD personal offline",
   "start_url": "./index.html",
   "scope": "./",
